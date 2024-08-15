@@ -38,7 +38,9 @@ Route::resource('reportes', PDFController::class);
 
 Route::get('/pdf/{id}', [PDFController::class, 'report'])->name('pdf.report');
 
-Route::get('/report/grafica', [PDFController::class, 'showGrafica']);
+Route::get('/report/grafica/compras', [PDFController::class, 'showGraficaCompras']);
+
+Route::get('/report/grafica/ventas', [PDFController::class, 'showGraficaVentas']);
 
 Route::post('/cotizaciones', [CotizacionController::class, 'store'])->name('cotizaciones.store');
 

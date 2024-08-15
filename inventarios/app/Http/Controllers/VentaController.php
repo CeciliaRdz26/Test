@@ -67,6 +67,11 @@ class VentaController extends Controller
             $cotizacionProducto->id_venta = $venta->id_venta;
             $cotizacionProducto->id_producto = $productos[$i];
             $cotizacionProducto->precio_venta = Producto::find($productos[$i])->precio_venta;
+
+            Producto::where('id_producto', $productos[$i])->update([
+                'cantidad' => Producto::find($productos[$i])->cantidad - $cantidades[$i],
+            ]);
+
             $cotizacionProducto->cantidad = $cantidades[$i];
             $cotizacionProducto->save();
         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Cotizacion;
 use App\Models\CompraProducto;
+use App\Models\VentaProducto;
 use App\Models\CotizacionProducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,10 +17,20 @@ class PDFController extends Controller
         return view('reportes.index');
     }
 
-    public function showGrafica()
+    public function showGraficaCompras()
     {
         $data = CompraProducto::join('productos', 'compras_productos.id_producto', '=', 'productos.id_producto')
-                      ->select('productos.nombre', DB::raw('SUM(compras_productos.subtotal) as total_ingresos'))
+                      ->select('productos.nombre', DB::raw('SUM(compras_productos.cantidad) as total_ingresos'))
+                      ->groupBy('productos.nombre')
+                      ->get();
+
+        return response()->json($data);
+    }
+
+    public function showGraficaVentas()
+    {
+        $data = VentaProducto::join('productos', 'ventasproducto.id_producto', '=', 'productos.id_producto')
+                      ->select('productos.nombre', DB::raw('SUM(ventasproducto.cantidad) as total_ingresos'))
                       ->groupBy('productos.nombre')
                       ->get();
 
