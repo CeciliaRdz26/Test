@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Z.ITI-271311_U1_RODRÍGUEZ_CHAVEZ_ANA_CECILIA</string>
+    <string-array name="salary_types">
+        <item>Hour</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Bi-week</item>
+        <item>Semi-month</item>
+        <item>Month</item>
+        <item>Quarter</item>
+        <item>Year</item>
+    </string-array>
+</resources>

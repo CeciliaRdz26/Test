@@ -1,0 +1,69 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/salaryInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter salary amount"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/salaryTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/salary_types" />
+
+    <EditText
+        android:id="@+id/hoursPerWeekInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hours per week"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/daysPerWeekInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Days per week"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/holidaysPerYearInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Holidays per year"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/vacationDaysPerYearInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Vacation days per year"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate Salary" />
+
+    <TableLayout
+        android:id="@+id/resultsTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <!-- Header Row -->
+        <TableRow>
+            <TextView android:text="Period" android:textStyle="bold" />
+            <TextView android:text="Unadjusted" android:textStyle="bold" />
+            <TextView android:text="Adjusted" android:textStyle="bold" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
